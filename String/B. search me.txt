@@ -1,0 +1,42 @@
+//sliding window
+//B. Search me-HackerEarth
+//O(N*M)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pb push_back
+
+const int N= 2e5+5;
+string T,P;
+int LP,LT;
+bool match(int L,int R){
+    for(int i=0;i<LP;i++){
+        if(T[L+i]!=P[i]) return false;
+    }
+    return true;
+}
+
+int main(){
+   int Test=1;
+   //cin>>Test;
+   while(Test--){
+       //cin>>T>>P;
+       getline(cin,T);
+       P="to the";
+       LP=P.size(),LT=T.size();
+       bool ck=false;
+       for(int L=0,R=LP-1;R<LT;L++,R++){
+           if(match(L,R)) {ck=true; break;}
+       }
+       if(ck) cout<<"YES"<<endl;
+       else cout<<"NO"<<endl;
+   }
+   return 0;
+}
+/*
+CodeNCode Cod
+
+ans: 0 5
+*/
